@@ -1,0 +1,511 @@
+/* TRISITE CSS 4.0  */
+/* (C) 2023 TRISITE */
+/* Form module      */
+
+label {
+    display: inline-flex;
+    align-items: center;
+}
+
+input ,
+select ,
+textarea {
+    padding: calc(var(--padding) / 2);
+    outline: none;
+    border-radius: var(--radius-inner);
+    background: var(--color-form);
+    font-size: 1em;
+    color: var(--color-text);
+    border: solid var(--outline) var(--color-outline);
+    transition: border var(--transition);
+}
+
+input::-ms-clear ,
+input::-ms-reveal {
+    display: none;
+}
+
+input:is([type=tel], [type=date], [type=time], [type=datetime-local]) {
+    max-width: var(--input-width);
+    width: 100%;
+}
+input:is([type=text], [type=email], [type=url], [type=search]) ,
+textarea {
+    max-width: 100%;
+    width: 100%;
+}
+input[type=text].datalist {
+    width: auto;
+}
+
+input:hover ,
+textarea:hover ,
+input:focus ,
+textarea:focus {
+    border: solid var(--outline) var(--color-outline-focus);
+}
+
+select ,
+input:is([type=date], [type=time], [type=datetime-local]) {
+    min-height: calc(1.5em + var(--padding));
+}
+textarea {
+    resize: vertical;
+}
+
+
+/* Radio */
+input[type=radio] {
+    border: none;
+}
+input[type=radio]:checked {
+    background: var(--color-outline-focus);
+}
+label.radio input[type=radio] {
+    opacity: 0;
+}
+
+
+/* Checkbox */
+input[type=checkbox] {
+    border-radius: 3px;
+    border: none;
+}
+input[type=checkbox]:checked {
+    background: var(--color-outline-focus);
+}
+label.checkbox input[type=checkbox] {
+    opacity: 0;
+}
+
+
+/* Radio & Checkbox */
+label.radio ,
+label.checkbox {
+    padding-left: var(--padding);
+    cursor: pointer;
+}
+:is(label.radio, label.checkbox) input + span {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: calc(1em * var(--step));
+    height: calc(1em * var(--step));
+    border-radius: 50%;
+    border: solid var(--outline) var(--color-outline);
+    background: var(--color-form);
+}
+label.checkbox input + span {
+    border-radius:3px;
+}
+
+label input:checked + span {
+    border: solid var(--outline) var(--color-outline-focus);
+}
+
+:is(label.radio, label.checkbox) input + span::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    transition: 0.2s;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+label.radio input:checked + span::after {
+    border: solid var(--trigger-bar) var(--color-form);
+}
+
+label.checkbox input + span::after {
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 3px;
+    transform: translate(-4px, 1px) rotateZ(-135deg);
+    transform-origin: 2px 2px;
+    margin: 0;
+    transition: 0s;
+}
+
+label.checkbox input + span::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 3px;
+    transform: translate(-2px, 2px) rotateZ(-45deg);
+    transform-origin: 2px 2px;
+    transition: 0.4s;
+}
+
+:is(label.radio, label.checkbox) input:checked + span::after ,
+:is(label.radio, label.checkbox) input:checked + span::before {
+    background: var(--color-outline-focus);
+}
+
+:is(label.radio, label.checkbox) input:disabled + span {
+    border: solid var(--outline) var(--color-gray);
+}
+label input:checked:disabled + span {
+    border: solid var(--outline) var(--color-gray);
+}
+:is(label.radio, label.checkbox) input:checked:disabled + span::after ,
+:is(label.radio, label.checkbox) input:checked:disabled + span::before {
+    background: var(--color-gray);
+}
+
+@media (prefers-color-scheme: dark){
+    :is(label.radio, label.checkbox) input:disabled + span {
+        border: solid var(--outline) var(--color-lightgray);
+    }
+    label input:checked:disabled + span {
+        border: solid var(--outline) var(--color-lightgray);
+    }
+    :is(label.radio, label.checkbox) input:checked:disabled + span::after ,
+    :is(label.radio, label.checkbox) input:checked:disabled + span::before {
+        background: var(--color-lightgray);
+    }
+}
+
+
+/* Date Time */
+input:is([type=date], [type=time], [type=datetime-local])::-webkit-datetime-edit {
+    padding-right: var(--padding);
+}
+input:is([type=date], [type=time], [type=datetime-local])::-webkit-calendar-picker-indicator {
+    color: var(--color-outline-text);
+    background-color: var(--color-outline);
+    padding: calc(var(--padding) + 5px);
+    padding-left: calc(var(--padding) / 2);
+    margin: calc((var(--padding) + 5px) * -1);
+    margin-left: 0;
+    transition: var(--transition);
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+}
+input:is([type=date], [type=time], [type=datetime-local]):hover::-webkit-calendar-picker-indicator {
+    color: var(--color-outline-focus-text);
+    background-color: var(--color-outline-focus);
+}
+input:is([type=date], [type=time])::-webkit-calendar-picker-indicator:active {
+    background-color: var(--color-outline-focus);
+}
+
+
+/* Color */
+input[type=color] {
+    width: calc(var(--trigger-bar) * 10 * var(--step));
+    height: calc(var(--trigger-bar) * 10* var(--step));
+    border-radius: 50%;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+input[type=color]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: solid var(--trigger-bar) var(--color-form);
+    border-radius: 50%;
+    overflow: hidden;
+}
+input[type=color]::-webkit-color-swatch {
+    border: none;
+}
+input[type=color]::-moz-color-swatch {
+    border: none;
+}
+
+
+/* File */
+input[type=file] {
+    width: 100%;
+    min-height: calc(var(--trigger-bar) * 10 * var(--step));
+    cursor: pointer;
+}
+input[type=file]::file-selector-button ,
+input[type=file]::-webkit-file-upload-button {
+    appearance: none;
+	display: inline-block;
+	padding: calc(var(--padding) / 2) var(--padding);
+	background: var(--color-agree-bg);
+	color: var(--color-agree-fr);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	border-radius: calc(var(--radius-inner) / 2);
+    cursor: pointer;
+    transition: var(--transition);
+	border: none;
+	outline: none;
+    margin-right: var(--margin);
+}
+input[type=file]:hover::file-selector-button ,
+input[type=file]:hover::-webkit-file-upload-button {
+	filter: brightness(var(--brightness));
+	border: none;
+}
+
+.upload-area {
+    border: solid var(--outline) var(--color-outline);
+    border-radius: var(--radius-inner);
+    padding: calc(var(--padding) / 2);
+    transition: var(--transition);
+    width: 100%;
+}
+.upload-area:hover {
+    border: solid var(--outline) var(--color-outline-focus);
+}
+.upload-area input[type=file] {
+    border: none;
+    outline: none;
+    max-width: auto;
+    padding: 0;
+    border-radius: 0;
+    flex: 1;
+}
+.upload-area-file {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 var(--padding);
+}
+
+.upload-area-file .file-set {
+    display: flex;
+    align-items: center;
+    gap: var(--padding);
+    margin-top: 0;
+}
+.upload-area-file.multiple .file-set {
+    width: 100%;
+    border-top: solid var(--outline) var(--color-outline);
+    margin-top: calc(var(--padding) / 2);
+    padding-top: calc(var(--padding) / 2);
+}
+.file-name {
+    flex: 1;
+    line-height:1.2;
+}
+.file-icon {
+    padding: calc(var(--padding) / 2) var(--padding);
+    color: var(--color-white);
+	font-size: calc(var(--font-size) * 0.8);
+	line-height: var(--line-height);
+	border-radius: calc(var(--radius-inner) / 2);
+    width: 6em;
+    height:3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.file-icon.image {
+    padding: 0;
+}
+.file-icon img {
+    object-fit: cover;
+    width: 6em;
+    height:3em;
+    border-radius: calc(var(--radius-inner) / 2);
+}
+
+.upload-area.shake {
+    animation: shake .1s infinite;
+}
+@keyframes shake {
+    0%   {transform: translate(0px, 0px)}
+    30%  {transform: translate(0px, 2px)}
+    60%  {transform: translate(2px, 0px)}
+    100% {transform: translate(0px, 0px)}
+}
+
+.upload-area .delete-file {
+    border: none;
+    background: none;
+    color:var(--color-gray);
+    cursor: pointer;
+    display :flex;
+    align-items: center;
+    outline: none;
+}
+.upload-area .delete-file:hover {
+    color:var(--color-red);
+}
+
+
+/* Range */
+.range {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--padding);
+    width: var(--input-width);
+    max-width: 100%;
+}
+input[type=range] {
+    background: var(--color-outline);
+    height: calc(var(--trigger-bar) * 2);
+    flex: 1;
+    padding: 0;
+    outline: solid var(--outline) transparent;
+    appearance: none;
+    cursor: grab;
+}
+input[type=range]:hover {
+    background: var(--color-outline-focus);
+}
+input[type=range]::-webkit-slider-thumb ,
+input[type=range]::-moz-range-thumb {
+    border: none;
+    background: var(--color-trigger-bg);
+}
+
+
+/* Select */
+select {
+    min-width: var(--input-width);
+}
+
+
+/* Number */
+.number {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--padding);
+    width: var(--input-width);
+    max-width: 100%;
+}
+input[type=number] {
+    width: var(--input-width);
+    max-width: 100%;
+    text-align: center;
+}
+.number button {
+    color: var(--color-text);
+    font-size: var(--font-size);
+    transition: var(--transition);
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.number button:hover {
+    color: var(--color-hover);
+}
+.number input[type=number]::-webkit-outer-spin-button ,
+.number input[type=number]::-webkit-inner-spin-button ,
+.number input[type=number] {
+    appearance: none;
+    -moz-appearance:textfield;
+}
+
+
+/* Password */
+.password {
+    width: var(--input-width);
+    max-width: 100%;
+}
+.password input {
+    padding-right: 3em;
+    width: 100%;
+}
+.password button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1em;
+    height: 100%;
+    padding: calc(var(--padding) / 2) var(--padding);
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--color-link);
+    transition: var(--transition);
+    cursor: pointer;
+}
+.password button:hover {
+    color: var(--color-hover);
+}
+.password button span:last-child {
+    display: none;
+}
+.password button.visible span:first-child {
+    display: none;
+}
+.password button.visible span:last-child {
+    display: inline;
+}
+
+
+/* Search */
+input[type=search] {
+    appearance: none;
+}
+.search input {
+    padding-right: 3em;
+    width: 100%;
+}
+.search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: var(--outline);
+    top: var(--outline);
+    width: 1em;
+    height: calc(100% - (var(--outline) * 2));
+    padding: calc(var(--padding) / 2) var(--padding);
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--color-outline-text);
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: 0 var(--radius-inner) var(--radius-inner) 0;
+}
+.search input[type=search]::-webkit-search-cancel-button {
+    display: none;
+}
+
+
+/* Others */
+::placeholder {
+    color:var(--color-gray);
+    opacity: 0.8;
+}
+
+.require {
+	font-size: 0.8em;
+    line-height:0.8em;
+	color: #fff;
+	padding: 0.2em 4px;
+	margin: 0 0 0 5px;
+	background: var(--color-red);
+	border-radius: 3px;
+	display: inline-block;
+}
+
+
+/** Media Query **/
+@media (max-width : 920px) {
+
+}
+@media (max-width : 720px) {
+    form .flex {
+        flex-direction: row;
+    }
+}
+@media (max-width : 520px) {
+    .file-icon {
+        display: hidden;
+    }
+    :is(input,select,textarea) + :is(input,select,textarea) {
+        margin-top: calc(var(--margin) / 2);
+    }
+}

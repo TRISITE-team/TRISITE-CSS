@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@300;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width">
+<title>Sample</title>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+
+<link rel="stylesheet" href="sample.css">
+<link rel="stylesheet" href="../init.css">
+<script src="../nav.js"></script>
+<script src="../form.js"></script>
+<script src="../pageing.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="flex flex-middle flex-nowrap width-limitter">
+        <h1>SAMPLE</h1>
+        <details class="menu-trigger">
+        <summary><span>MENU</span></summary>
+        <nav class="main-menu slide-right">
+            <ul>
+            <li><a href="#flex">flex</a></li>
+            <li><a href="#grid">grid</a></li>
+            <li><a href="#heading">h</a></li>
+            <li><a href="#paragraph">p</a></li>
+            <li><a href="#preformatted">pre</a></li>
+            <li><a href="#ul">ul</a></li>
+            <li><a href="#ol">ol</a></li>
+            <li><a href="#dl">dl</a></li>
+            <li><a href="#table">table</a></li>
+            <li><a href="#form">form</a></li>
+            </ul>
+        </nav>
+        </details>
+    </div>
+</header>
+
+<main>
+
+<section id="flex"><div class="width-limitter">
+<h1>flex</h1>
+<div class="flex">
+<article class="g3" style="min-width:300px;">
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</article>
+<div class="g4" style="min-width:300px;">
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+<div class="g5" style="min-width:300px;">
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+</div>
+</div></section>
+
+<section id="grid"><div class="width-limitter">
+<h1>grid</h1>
+<div class="grid grid-column-3">
+<div>
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+<div>
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+<div>
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+<div>
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+<div>
+<figure>
+<img src="image.jpg" alt="" width="100%">
+<figcaption class="fill"><span>テキストテキストテキストテキストテキストテキストテキストテキスト</span></figcaption>
+</figure>
+</div>
+</div>
+</div></section>
+
+<section id="heading"><div class="width-limitter">
+<h1>headding</h1>
+<div>
+<h1>見出し1</h1>
+<p>テキストテキストテキストテキストテキストテキスト</p>
+<h2>見出し2</h2>
+<p>テキストテキストテキストテキストテキストテキスト</p>
+<h3>見出し3</h3>
+<p>テキストテキストテキストテキストテキストテキスト</p>
+<h4>見出し4</h4>
+<p>テキストテキストテキストテキストテキストテキスト</p>
+<h5>見出し5</h5>
+<p>テキストテキストテキストテキストテキストテキスト</p>
+<h6>見出し6</h6>
+<p>テキストテキストテキストテキストテキストテキスト</p>
+</div>
+</div></section>
+
+<section id="paragraph"><div class="width-limitter">
+<h1>paragraph</h1>
+<p><strong>「吾輩は猫である。名前はまだ無い。」</strong></p>
+<p>この<em>書生</em>の掌の裏でしばらくはよい心持に坐っておったが、しばらくすると非常な速力で運転し始めた。書生が動くのか自分だけが動くのか分らないが無暗に眼が廻る。胸が悪くなる。到底助からないと思っていると、どさりと音がして<a href="https://proverb-encyclopedia.com/mekarahigaderu/" target="_balnk">眼から火</a>が出た。それまでは記憶しているがあとは何の事やらいくら考え出そうとしても分らない。</p>
+<p>1.2cm<sup>3</sup>　テストです。<sub>※1</sub></p>
+</div></section>
+
+<section id="preformatted"><div class="width-limitter">
+<h1>preformatted text</h1>
+<pre>
+    var $croppie = $preview.croppie({
+        url: _url,
+        viewport: {
+            width: 200,
+            height: 200
+        },
+        boundary: {
+            width: 300,
+            height: 300
+        }
+    });
+</pre>
+</div></section>
+
+<section id="ul"><div class="width-limitter">
+<h1>unordered list</h1>
+<div>
+<ul>
+<li>リスト項目1</li>
+<li>リスト項目2</li>
+<li>リスト項目3</li>
+<li>リスト項目4</li>
+</ul>
+</div>
+</div></section>
+
+<section id="ol"><div class="width-limitter">
+<h1>ordered list</h1>
+<div>
+<ol>
+<li>リスト項目1</li>
+<li>リスト項目2</li>
+<li>リスト項目3</li>
+<li>リスト項目4</li>
+</ol>
+</div>
+</div></section>
+
+<section id="dl"><div class="width-limitter">
+<h1>definition list</h1>
+<div>
+<dl>
+<dt>質問1</dt>
+<dd>答え1</dd>
+<dt>質問2質問2</dt>
+<dd>答え2答え2</dd>
+<dt>質問3質問3質問3</dt>
+<dd>答え3答え3答え3</dd>
+</dl>
+</div>
+</div></section>
+
+<section id="table"><div class="width-limitter">
+<h1>table</h1>
+<h2>Normal Table</h2>
+<div>
+<table>
+<tr>
+<th class="w100"></th><th>月</th><th>火</th><th>水</th>
+</tr>
+<tr>
+<th>1時間目</th><td>○</td><td>×</td><td>×</td>
+</tr>
+<tr>
+<th>2時間目</th><td>○</td><td>○</td><td>×</td>
+</tr>
+<tr>
+<th>3時間目</th><td>○</td><td>×</td><td>○</td>
+</tr>
+</table>
+</div>
+
+<h2>Block Table</h2>
+<div>
+<table class="block">
+<tr><th class="w100">1時間目</th><td>国語</td><td>算数</td><td>理科</td></tr>
+<tr><th>2時間目</th><td>体育</td><td>音楽</td><td>社会</td></tr>
+<tr><th>3時間目</th><td>図工</td><td>家庭科</td><td>英語</td></tr>
+<tr><th>4時間目</th><td>国語</td><td>算数</td><td>理科</td></tr>
+</table>
+</div>
+
+<h2>Scroll Table</h2>
+<div class="scroll-table">
+<table>
+<tr><th class="w100">1時間目</th><td>国語</td><td>算数</td><td>理科</td></tr>
+<tr><th>2時間目</th><td>体育</td><td>音楽</td><td>社会</td></tr>
+<tr><th>3時間目</th><td>図工</td><td>家庭科</td><td>英語</td></tr>
+<tr><th>4時間目</th><td>国語</td><td>算数</td><td>理科</td></tr>
+<tr><th>5時間目</th><td>体育</td><td>音楽</td><td>社会</td></tr>
+<tr><th>6時間目</th><td>図工</td><td>家庭科</td><td>英語</td></tr>
+<tr><th>7時間目</th><td>体育</td><td>音楽</td><td>社会</td></tr>
+<tr><th>8時間目</th><td>図工</td><td>家庭科</td><td>英語</td></tr>
+</table>
+</div>
+</div></section>
+
+<section id="form"><div class="width-limitter">
+<h1>form</h1>
+<form action="" method="post">
+<dl>
+<dt>text</dt>
+<dd>
+<input type="text" name="name" value="" placeholder="長宗我部 元親">
+</dd>
+
+<dt>email</dt>
+<dd>
+<input type="email" name="mail" value="">
+</dd>
+
+<dt>password</dt>
+<dd>
+<input type="password" name="password" value="">
+</dd>
+
+<dt>tel</dt>
+<dd>
+<input type="tel" name="tel" value="">
+</dd>
+
+<dt>date time</dt>
+<dd>
+<input type="date" name="birthday" value="">　<input type="time" name="birthtime" value="">
+</dd>
+<dd>
+<input type="datetime-local" name="birthdaytime" value="">
+</dd>
+
+<dt>select</dt>
+<dd>
+<select name="blood">
+<option value="A">A型</option>
+<option value="B">B型</option>
+<option value="O">O型</option>
+<option value="AB">AB型</option>
+</select>
+</dd>
+
+<dt>datalist</dt>
+<dd>
+<input type="text" name="name" list="fruits" class="datalist">
+<datalist id="fruits">
+<option value="りんご"></option>
+<option value="バナナ"></option>
+<option value="いちご"></option>
+</datalist>
+</dd>
+
+<dt>url</dt>
+<dd>
+<input type="url" name="homepage" value="">
+</dd>
+
+<dt>Search</dt>
+<dd>
+<input type="search" name="search_text">
+</dd>
+
+<dt>radio</dt>
+<dd>
+<div class="flex flex-left flex-middle gap-2">
+<label class="radio"><input type="radio" name="contact" value="email"><span></span>メール</label>
+<label class="radio"><input type="radio" name="contact" value="tel"><span></span>電話</label>
+</div>
+</dd>
+
+<dt>checkbox</dt>
+<dd>
+<div class="flex flex-left flex-middle gap-2">
+<label class="checkbox"><input type="checkbox" name="fruit[]" value="apple"><span></span>りんご</label>
+<label class="checkbox"><input type="checkbox" name="fruit[]" value="grape"><span></span>ぶどう</label>
+<label class="checkbox"><input type="checkbox" name="fruit[]" value="banana"><span></span>バナナ</label>
+<label class="checkbox"><input type="checkbox" name="fruit[]" value="peach"><span></span>もも</label>
+<label class="checkbox"><input type="checkbox" name="fruit[]" value="strawberry"><span></span>いちご</label>
+</div>
+</dd>
+
+<dt>textarea</dt>
+<dd>
+<textarea name="name" rows="10"></textarea>
+</dd>
+
+<dt>color</dt>
+<dd>
+<input type="color" name="color" class="input-color" value="#ffffff">
+</dd>
+
+<dt>range</dt>
+<dd>
+<div class="range">MIN<input type="range" name="volume" min="0" max="10" step="1">MAX</div>
+</dd>
+
+<dt>number</dt>
+<dd><input type="number" name="orders" value="1" min="1" max="10" step="1"></dd>
+
+<dd>
+<input class="button" type="submit" name="submit" value="送信">
+<button class="button button-cancel" type="button" name="button">キャンセル</button>
+<button class="button button-disagree" type="button" name="button">同意しない</button>
+<input class="button" type="submit" name="submit" value="押せない" disabled="disabled">
+<a class="button slide" href="">リンク</a>
+</dd>
+
+
+<dt>File</dt>
+<dd>
+<input type="file" value="" name="attachment_file[]" accept=".txt,.png,.pdf" multiple="multiple" max="2">
+<p>アップロードできるファイルはtxt、png、pdfです。</p>
+</dd>
+
+</form>
+</div></section>
+
+<section><div class="width-limitter">
+<h1>iframe</h1>
+<div class="flex">
+<iframe class="g3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6117.5507766877745!2d139.75602032972193!3d35.68538132094226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1673921511534!5m2!1sja!2sjp" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<h2 class="g1">テスト</h2>
+</div>
+</div></section>
+
+<section><div class="width-limitter">
+<nav>
+<ul class="pageing">
+<li class="pc tb"><span><span class="material-symbols-rounded">first_page</span></span></li>
+<li><span><span class="material-symbols-rounded">navigate_before</span></span></li>
+<li><span>1</span></li>
+<li><a href="">2</a></li>
+<li><a href="">3</a></li>
+<li><a href=""><span class="material-symbols-rounded">navigate_next</span></a></li>
+<li class="pc tb"><a href=""><span class="material-symbols-rounded">last_page</span></a></li>
+</ul>
+</nav>
+
+<nav>
+<div class="pageing">
+<div class="pc tb"><span class="material-symbols-rounded">first_page</span></div>
+<div><span class="material-symbols-rounded">navigate_before</span></div>
+<div>1</div>
+<a href="">2</a>
+<a href="">3</a>
+<a href=""><span class="material-symbols-rounded">navigate_next</span></a>
+<a href="" class="pc tb"><span class="material-symbols-rounded">last_page</span></a>
+</div>
+</nav>
+
+</div></section>
+
+</main>
+
+<div id="nav-cover"></div>
+
+</body>
+</html>

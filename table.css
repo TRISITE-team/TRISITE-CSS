@@ -1,0 +1,79 @@
+/* TRISITE CSS 4.0  */
+/* (C) 2023 TRISITE */
+/* Table module     */
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 100%;
+}
+table.free {
+	table-layout: auto;
+}
+table :is(th, td) {
+	padding: calc(var(--padding) / 2);
+	text-align: justify;
+	vertical-align: top;
+	background: var(--color-table);
+}
+table tbody tr:nth-last-child(odd) :is(th, td) {
+	background: var(--color-table-odd);
+}
+table th {
+	font-weight: bold;
+}
+table.block {
+    display: table;
+}
+
+.scroll-table {
+	width: 100%;
+	overflow-x: auto;
+	margin-bottom: var(--margin);
+}
+.scroll-table table {
+    min-width: calc(var(--width-limit) / 2);
+	margin: 0;
+}
+.scroll-table table tr > :first-child {
+    position: sticky;
+	top: 0;
+    left: 0;
+    z-index: 2;
+	background: linear-gradient(to left, rgba(0,0,0,0.05) 0, transparent 10%) var(--color-table);
+}
+.scroll-table table tr:nth-last-child(odd) > :first-child {
+	background: linear-gradient(to left, rgba(0,0,0,0.05) 0, transparent 10%) var(--color-table-odd);
+}
+
+table :first-child tr:first-of-type > :first-child {
+	border-top-left-radius: var(--radius-inner);
+}
+table :first-child tr:first-of-type > :last-child {
+	border-top-right-radius: var(--radius-inner);
+}
+table tr:last-of-type > :first-child {
+	border-bottom-left-radius: var(--radius-inner);
+}
+table tr:last-of-type > :last-child {
+	border-bottom-right-radius: var(--radius-inner);
+}
+
+
+/** Media Query **/
+@media (max-width : 520px) {
+	table.block {
+		display: block;
+	}
+	table.block :is(tbody, tr, th, td),
+	table.block tr:nth-of-type(even) :is(th, td) {
+		display: block;
+		width: 100%;
+		background:none;
+	}
+	table.block tr td:last-of-type {
+		margin-bottom: var(--margin);
+		border: none;
+	}
+}

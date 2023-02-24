@@ -1,0 +1,202 @@
+/* TRISITE CSS 4.0  */
+/* (C) 2023 TRISITE */
+/* Nav module       */
+
+html.open body {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+}
+html.open.no-scroll body {
+    overflow-y: auto;
+}
+
+.main-menu {
+    height: 100%;
+    z-index: 5;
+}
+
+.main-menu > * {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+}
+
+.main-menu a {
+    font-weight:bold;
+    display: block;
+}
+
+.menu-trigger summary {
+    gap: calc(var(--trigger-size) / 12);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: var(--trigger-size);
+    height: var(--trigger-size);
+    padding: calc(var(--trigger-size) / 6);
+    cursor: pointer;
+    background: var(--color-trigger-bg);
+    border-radius: var(--radius-inner);
+    transition: var(--transition);
+
+    font-size: var(--small);
+    color: var(--color-trigger-fr);
+    text-align: center;
+    line-height: 1;
+
+    z-index: 10;
+    display: none;
+}
+.menu-trigger summary::-webkit-details-marker {
+    display: none;
+}
+.menu-trigger summary > div ,
+.menu-trigger summary > span {
+    flex: 1;
+    width: 100%;
+    max-height:80%;
+    text-indent: -9000px;
+}
+.menu-trigger summary > ::before ,
+.menu-trigger summary > ::after ,
+.menu-trigger summary > div > span {
+    content: '';
+    left: 0;
+    width: 100%;
+    height: var(--trigger-bar);
+    position: absolute;
+    background: var(--color-trigger-fr);
+    border-radius: calc(var(--radius-inner) / 2);
+    transition: var(--transition);
+}
+.menu-trigger summary > span::before {
+    top: calc(50% - (var(--trigger-bar) * 2));
+}
+.menu-trigger summary > span::after {
+    bottom: calc(50% - (var(--trigger-bar) * 2));
+}
+.menu-trigger summary > div > span {
+    top: calc(50% - (var(--trigger-bar) / 2));
+}
+.menu-trigger summary > div::before {
+    top: 0;
+}
+.menu-trigger summary > div::after {
+    bottom: 0;
+}
+
+.menu-trigger[open]:not(.close) summary ::before {
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%) rotate(140deg);
+    background: var(--color-trigger-fr);
+}
+.menu-trigger[open]:not(.close) summary ::after {
+    bottom: 50%;
+    opacity: 1;
+    transform: translateY(50%) rotate(-140deg);
+    background: var(--color-trigger-fr);
+}
+.menu-trigger[open]:not(.close) summary > div > span {
+    opacity: 0;
+}
+
+
+#nav-cover {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+    background: var(--color-dark-glass);
+    backdrop-filter: blur(4px);
+    will-change: opacity, backdrop-filter;
+    display: none;
+    z-index: 3;
+}
+
+
+/* Media Query */
+@media (max-width : 920px) {
+    .main-menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y:auto;
+        background: var(--color-light-glass);
+    }
+    .main-menu.slide-left {
+        left: -200vw;
+        transition: left var(--transition);
+    }
+    .main-menu.slide-right {
+        right: -200vw;
+        transition: right var(--transition);
+    }
+    .menu-trigger[open]:not(.close) ~ .main-menu.slide-left ,
+    .menu-trigger[open]:not(.close) > .main-menu.slide-left ,
+    html.open .main-menu.slide-left {
+        left: 0;
+    }
+    .menu-trigger[open]:not(.close) ~ .main-menu.slide-right ,
+    .menu-trigger[open]:not(.close) > .main-menu.slide-right ,
+    html.open .main-menu.slide-right {
+        right: 0;
+    }
+    .main-menu ul {
+        display: block;
+    }
+    .main-menu ul a {
+        padding: var(--padding);
+    }
+
+    .menu-trigger summary {
+        display: flex;
+    }
+}
+
+
+/* Container Query */
+@container (max-width : 920px) {
+    .main-menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y:auto;
+        background: var(--color-light-glass);
+    }
+    .main-menu.slide-left {
+        left: -100vw;
+        transition: left var(--transition);
+    }
+    .main-menu.slide-right {
+        right: -100vw;
+        transition: right var(--transition);
+    }
+    .menu-trigger[open]:not(.close) ~ .main-menu.slide-left ,
+    .menu-trigger[open]:not(.close) > .main-menu.slide-left ,
+    html.open .main-menu.slide-left {
+        left: 0;
+    }
+    .menu-trigger[open]:not(.close) ~ .main-menu.slide-right ,
+    .menu-trigger[open]:not(.close) > .main-menu.slide-right ,
+    html.open .main-menu.slide-right {
+        right: 0;
+    }
+    .main-menu ul {
+        display: block;
+    }
+    .main-menu ul a {
+        padding: var(--padding);
+    }
+
+    .menu-trigger summary {
+        display: flex;
+    }
+}

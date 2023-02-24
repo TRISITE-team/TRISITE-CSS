@@ -1,0 +1,51 @@
+/* TRISITE CSS 4.0  */
+/* (C) 2023 TRISITE */
+/* Pageing module   */
+
+.pageing {
+	padding:0;
+	margin:var(--margin) 0;
+	display: flex;
+	gap: calc(var(--padding) / 2);
+	justify-content: center;
+}
+.pageing > :not(li) ,
+.pageing > li > * {
+	min-width: calc(2em * var(--step));
+	height: calc(2em * var(--step));
+	padding: 0 var(--padding);
+	color: var(--color-outline-text);
+	background: var(--color-outline);
+	border-radius: var(--radius-inner);
+	transition: var(--transition);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pageing > :not(li, a) ,
+.pageing > li > :not(a) {
+	filter: brightness(0.9);
+}
+.pageing a:hover {
+	color: var(--color-outline-focus-text);
+	background: var(--color-outline-focus);
+}
+.pageing [aria-current="page"] {
+	color: var(--color-outline-focus-text);
+	background: var(--color-outline-focus);
+	font-weight: bold;
+}
+.pageing > li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+/** Media Query **/
+@media (max-width : 920px) {
+
+}
+@media (max-width : 520px) {
+
+}

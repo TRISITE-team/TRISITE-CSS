@@ -1,0 +1,79 @@
+/* TRISITE CSS 4.0  */
+/* (C) 2023 TRISITE */
+/* Button module    */
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--padding);
+	background: var(--color-agree-bg);
+	color: var(--color-agree-fr);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	border-radius: var(--radius-inner);
+    cursor: pointer;
+    transition: var(--transition);
+	border: none;
+	min-width: 200px;
+	max-width: 100%;
+	outline: none;
+	appearance: none;
+}
+.button:hover {
+	filter: brightness(var(--brightness));
+	outline: none;
+	color: var(--color-agree-fr);
+}
+
+.button.slide {
+	background: linear-gradient(90deg,var(--color-agree-bg) 0%,var(--color-agree-bg) 50%,var(--color-agree-fr) 50%,var(--color-agree-fr) 100%);
+	background-size: 200% auto;
+	background-position: 100%;
+	color: var(--color-agree-bg);
+	border: solid 1px var(--color-agree-bg);
+}
+.button.slide:hover {
+	background-position: 0%;
+	color: var(--color-agree-fr);
+	filter: brightness(1);
+}
+
+.button.button-disagree {
+	border: solid 1px var(--color-disagree-bg);
+	background: var(--color-disagree-bg);
+	color: var(--color-disagree-fr);
+	border: none;
+	min-width: auto;
+}
+
+.button.button-cancel {
+	border: solid 1px var(--color-cancel-bg);
+	background: var(--color-cancel-bg);
+	color: var(--color-cancel-fr);
+	border: none;
+	min-width: auto;
+}
+
+.button[disabled=disabled] ,
+.button[disabled=disabled]:hover {
+    background: var(--color-lightgray);
+    color: var(--color-gray);
+    border: solid 1px var(--color-lightgray);
+	filter: brightness(1);
+	cursor: default;
+}
+
+
+/** Media Query **/
+@media (max-width : 920px) {
+
+}
+@media (max-width : 520px) {
+	.button {
+		width: 100%;
+	}
+	.button + .button {
+		margin-top: calc(var(--margin) / 2);
+	}
+}

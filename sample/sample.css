@@ -1,0 +1,39 @@
+* {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+body > header {
+    background:var(--color-light-glass);
+    padding:10px 0;
+}
+body > header h1 {
+    z-index:10;
+}
+.main-menu > ul {
+    gap:30px;
+}
+
+main section:nth-child(odd) {
+    background:var(--color-lightgray);
+}
+
+@media (prefers-color-scheme: dark){
+    body > header {
+        background:var(--color-dark-glass);
+    }
+    main > section:nth-of-type(odd) {
+        background: rgba(255,255,255,0.1);
+    }
+}
+
+
+/** Media Query **/
+@media (max-width : 920px) {
+    body .main-menu {
+        max-width:400px;
+        height:calc(100% - 80px);
+        padding-top: 80px;
+    }
+}
+@media (max-width : 520px) {
+
+}
