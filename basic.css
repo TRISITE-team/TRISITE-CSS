@@ -131,11 +131,13 @@ figure img {
 	min-width: 100%;
 }
 
-p > img.left {
-	padding: 0 var(--margin) var(--margin) 0;
+p > .left {
+	float: left;
+	padding: 0 var(--padding) var(--padding) 0;
 }
-p > img.right {
-	padding: 0 0 var(--margin) var(--margin);
+p > .right {
+	float: right;
+	padding: 0 0 var(--padding) var(--padding);
 }
 
 :is(ul, ol) {
@@ -144,7 +146,6 @@ p > img.right {
 li {
 	line-height: var(--line-height);
 }
-:is(ul, ol).no-style ,
 :is(ul, ol).no-style li {
 	list-style: none;
 }
@@ -189,7 +190,7 @@ address {
 
 
 /* Common Class */
-.width-limitter {
+.width-limiter {
 	max-width: var(--width-limit);
 	padding-left: var(--padding);
 	padding-right: var(--padding);
