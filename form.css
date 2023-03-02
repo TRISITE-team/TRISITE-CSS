@@ -374,7 +374,7 @@ select {
 .number {
     display: inline-flex;
     align-items: center;
-    gap: var(--padding);
+    gap: calc(var(--gap) / 2);
     width: var(--input-width);
     max-width: 100%;
 }
@@ -382,6 +382,10 @@ input[type=number] {
     width: var(--input-width);
     max-width: 100%;
     text-align: center;
+}
+.number input[type=number] {
+    width: auto;
+    flex: 1;
 }
 .number button {
     color: var(--color-text);
@@ -391,6 +395,8 @@ input[type=number] {
     outline: none;
     border: none;
     cursor: pointer;
+    width: auto;
+    padding: 0;
 }
 .number button:hover {
     color: var(--color-hover);
