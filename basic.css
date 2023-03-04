@@ -141,7 +141,7 @@ p > .right {
 }
 
 :is(ul, ol) {
-	margin: 0 0 var(--margin) 1.5em;
+	margin-inline-start: 1.5em;
 }
 li {
 	line-height: var(--line-height);
