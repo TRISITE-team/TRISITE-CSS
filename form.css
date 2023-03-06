@@ -1,15 +1,15 @@
 /* TRISITE CSS 4.0  */
 /* (C) 2023 TRISITE */
-/* Form module      */
+/* :is(form, .form) module      */
 
-form label {
+:is(form, .form) label {
     display: inline-flex;
     align-items: center;
 }
 
-form input ,
-form select ,
-form textarea {
+:is(form, .form) input ,
+:is(form, .form) select ,
+:is(form, .form) textarea {
     padding: calc(var(--padding) / 2);
     outline: none;
     border-radius: var(--radius-inner);
@@ -20,72 +20,46 @@ form textarea {
     transition: border var(--transition);
 }
 
-form input::-ms-clear ,
-form input::-ms-reveal {
+:is(form, .form) input::-ms-clear ,
+:is(form, .form) input::-ms-reveal {
     display: none;
 }
 
-form input:is([type=tel], [type=date], [type=time], [type=datetime-local]) {
+:is(form, .form) input:is([type=tel], [type=date], [type=time], [type=datetime-local]) {
     max-width: var(--input-width);
     width: 100%;
 }
-form input:is([type=text], [type=email], [type=url], [type=search]) ,
-form textarea {
+:is(form, .form) input:is([type=text], [type=email], [type=url], [type=search]) ,
+:is(form, .form) textarea {
     max-width: 100%;
     width: 100%;
 }
-form input[type=text].datalist {
+:is(form, .form) input[type=text].datalist {
     width: auto;
 }
 
-form input:hover ,
-form textarea:hover ,
-form input:focus ,
-form textarea:focus {
+:is(form, .form) input:hover ,
+:is(form, .form) textarea:hover ,
+:is(form, .form) input:focus ,
+:is(form, .form) textarea:focus {
     border: solid var(--outline) var(--color-outline-focus);
 }
 
-form select ,
-form input:is([type=date], [type=time], [type=datetime-local]) {
+:is(form, .form) select ,
+:is(form, .form) input:is([type=date], [type=time], [type=datetime-local]) {
     min-height: calc(1.5em + var(--padding));
 }
-form textarea {
+:is(form, .form) textarea {
     resize: vertical;
 }
 
 
-/* Radio */
-form input[type=radio] {
-    border: none;
-}
-form input[type=radio]:checked {
-    background: var(--color-outline-focus);
-}
-form label.radio input[type=radio] {
-    opacity: 0;
-}
-
-
-/* Checkbox */
-form input[type=checkbox] {
-    border-radius: 3px;
-    border: none;
-}
-form input[type=checkbox]:checked {
-    background: var(--color-outline-focus);
-}
-form label.checkbox input[type=checkbox] {
-    opacity: 0;
-}
-
-
 /* Radio & Checkbox */
-form label.radio ,
-form label.checkbox {
-    padding-left: var(--padding);
+:is(form, .form) :is(label.radio, label.checkbox) {
+    padding-inline-start: calc(1em * var(--step));
     cursor: pointer;
 }
-form :is(label.radio, label.checkbox) input + span {
+:is(form, .form) :is(label.radio, label.checkbox) input + span {
     content: '';
     position: absolute;
     left: 0;
@@ -95,89 +69,91 @@ form :is(label.radio, label.checkbox) input + span {
     border-radius: 50%;
     border: solid var(--outline) var(--color-outline);
     background: var(--color-form);
+    transition: 0.1s;
 }
-form label.checkbox input + span {
-    border-radius:3px;
-}
-
-form label input:checked + span {
+:is(form, .form) :is(label.radio, label.checkbox) input:checked + span {
     border: solid var(--outline) var(--color-outline-focus);
 }
 
-form :is(label.radio, label.checkbox) input + span::after {
+:is(form, .form) :is(label.radio, label.checkbox) input + span::after {
     position: absolute;
     top: 0;
     left: 0;
     content: '';
-    transition: 0.2s;
+    transition: 0.1s;
     border-radius: 50%;
     width: 100%;
     height: 100%;
 }
 
-form label.radio input:checked + span::after {
+/* Radio */
+:is(form, .form) input[type=radio] {
+    border: none;
+}
+:is(form, .form) input[type=radio]:checked {
+    background: var(--color-outline-focus);
+}
+:is(form, .form) label.radio input {
+    opacity: 0;
+}
+:is(form, .form) label.radio input:checked + span::after {
     border: solid var(--trigger-bar) var(--color-form);
-}
-
-form label.checkbox input + span::after {
-    top: 50%;
-    left: 50%;
-    width: 35%;
-    height: 3px;
-    transform: translate(-4px, 1px) rotateZ(-135deg);
-    transform-origin: 2px 2px;
-    margin: 0;
-    transition: 0s;
-}
-
-form label.checkbox input + span::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60%;
-    height: 3px;
-    transform: translate(-2px, 2px) rotateZ(-45deg);
-    transform-origin: 2px 2px;
-    transition: 0.4s;
-}
-
-form :is(label.radio, label.checkbox) input:checked + span::after ,
-form :is(label.radio, label.checkbox) input:checked + span::before {
     background: var(--color-outline-focus);
 }
 
-form :is(label.radio, label.checkbox) input:disabled + span {
-    border: solid var(--outline) var(--color-gray);
+/* Checkbox */
+:is(form, .form) input[type=checkbox] {
+    border-radius: 3px;
+    border: none;
 }
-form label input:checked:disabled + span {
-    border: solid var(--outline) var(--color-gray);
+:is(form, .form) input[type=checkbox]:checked {
+    background: var(--color-outline-focus);
 }
-form :is(label.radio, label.checkbox) input:checked:disabled + span::after ,
-form :is(label.radio, label.checkbox) input:checked:disabled + span::before {
+:is(form, .form) label.checkbox input {
+    opacity: 0;
+}
+:is(form, .form) label.checkbox input + span {
+    border-radius:3px;
+}
+:is(form, .form) label.checkbox input + span::after {
+    top: 50%;
+    left: 50%;
+    width: 0.8em;
+    height: 0.4em;
+    border-left: solid 0 var(--color-form);
+    border-bottom: solid 0 var(--color-form);
+    transform: translate(-45%,-70%) rotateZ(-45deg);
+    margin: 0;
+    border-radius:0;
+}
+:is(form, .form) label.checkbox input:checked + span {
+    background: var(--color-outline-focus);
+}
+:is(form, .form) label.checkbox input:checked + span::after {
+    border-left: solid max(0.15em,var(--trigger-bar)) var(--color-form);
+    border-bottom: solid max(0.15em,var(--trigger-bar)) var(--color-form);
+}
+:is(form, .form) label.checkbox input:checked:disabled + span {
     background: var(--color-gray);
 }
 
-@media (prefers-color-scheme: dark){
-    form :is(label.radio, label.checkbox) input:disabled + span {
-        border: solid var(--outline) var(--color-lightgray);
-    }
-    form label input:checked:disabled + span {
-        border: solid var(--outline) var(--color-lightgray);
-    }
-    form :is(label.radio, label.checkbox) input:checked:disabled + span::after ,
-    form :is(label.radio, label.checkbox) input:checked:disabled + span::before {
-        background: var(--color-lightgray);
-    }
+/* Radio & Checkbox disabled */
+:is(form, .form) :is(label.radio, label.checkbox) input:disabled + span {
+    border: solid var(--outline) var(--color-gray);
+}
+:is(form, .form) :is(label.radio, label.checkbox) input:checked:disabled + span {
+    border: solid var(--outline) var(--color-gray);
+}
+:is(form, .form) :is(label.radio, label.checkbox) input:checked:disabled + span::after {
+    background: var(--color-gray);
 }
 
 
 /* Date Time */
-form input:is([type=date], [type=time], [type=datetime-local])::-webkit-datetime-edit {
+:is(form, .form) input:is([type=date], [type=time], [type=datetime-local])::-webkit-datetime-edit {
     padding-right: var(--padding);
 }
-form input:is([type=date], [type=time], [type=datetime-local])::-webkit-calendar-picker-indicator {
+:is(form, .form) input:is([type=date], [type=time], [type=datetime-local])::-webkit-calendar-picker-indicator {
     color: var(--color-outline-text);
     background-color: var(--color-outline);
     padding: calc(var(--padding) + 5px);
@@ -189,17 +165,17 @@ form input:is([type=date], [type=time], [type=datetime-local])::-webkit-calendar
     height: 1em;
     cursor: pointer;
 }
-form input:is([type=date], [type=time], [type=datetime-local]):hover::-webkit-calendar-picker-indicator {
+:is(form, .form) input:is([type=date], [type=time], [type=datetime-local]):hover::-webkit-calendar-picker-indicator {
     color: var(--color-outline-focus-text);
     background-color: var(--color-outline-focus);
 }
-form input:is([type=date], [type=time])::-webkit-calendar-picker-indicator:active {
+:is(form, .form) input:is([type=date], [type=time])::-webkit-calendar-picker-indicator:active {
     background-color: var(--color-outline-focus);
 }
 
 
 /* Color */
-form input[type=color] {
+:is(form, .form) input[type=color] {
     width: calc(var(--trigger-bar) * 10 * var(--step));
     height: calc(var(--trigger-bar) * 10* var(--step));
     border-radius: 50%;
@@ -207,28 +183,28 @@ form input[type=color] {
     overflow: hidden;
     cursor: pointer;
 }
-form input[type=color]::-webkit-color-swatch-wrapper {
+:is(form, .form) input[type=color]::-webkit-color-swatch-wrapper {
     padding: 0;
     border: solid var(--trigger-bar) var(--color-form);
     border-radius: 50%;
     overflow: hidden;
 }
-form input[type=color]::-webkit-color-swatch {
+:is(form, .form) input[type=color]::-webkit-color-swatch {
     border: none;
 }
-form input[type=color]::-moz-color-swatch {
+:is(form, .form) input[type=color]::-moz-color-swatch {
     border: none;
 }
 
 
 /* File */
-form input[type=file] {
+:is(form, .form) input[type=file] {
     width: 100%;
     min-height: calc(var(--trigger-bar) * 10 * var(--step));
     cursor: pointer;
 }
-form input[type=file]::file-selector-button ,
-form input[type=file]::-webkit-file-upload-button {
+:is(form, .form) input[type=file]::file-selector-button ,
+:is(form, .form) input[type=file]::-webkit-file-upload-button {
     appearance: none;
 	display: inline-block;
 	padding: calc(var(--padding) / 2) var(--padding);
@@ -243,23 +219,23 @@ form input[type=file]::-webkit-file-upload-button {
 	outline: none;
     margin-right: var(--margin);
 }
-form input[type=file]:hover::file-selector-button ,
-form input[type=file]:hover::-webkit-file-upload-button {
+:is(form, .form) input[type=file]:hover::file-selector-button ,
+:is(form, .form) input[type=file]:hover::-webkit-file-upload-button {
 	filter: brightness(var(--brightness));
 	border: none;
 }
 
-form .upload-area {
+:is(form, .form) .upload-area {
     border: solid var(--outline) var(--color-outline);
     border-radius: var(--radius-inner);
     padding: calc(var(--padding) / 2);
     transition: var(--transition);
     width: 100%;
 }
-form .upload-area:hover {
+:is(form, .form) .upload-area:hover {
     border: solid var(--outline) var(--color-outline-focus);
 }
-form .upload-area input[type=file] {
+:is(form, .form) .upload-area input[type=file] {
     border: none;
     outline: none;
     max-width: auto;
@@ -267,30 +243,30 @@ form .upload-area input[type=file] {
     border-radius: 0;
     flex: 1;
 }
-form .upload-area-file {
+:is(form, .form) .upload-area-file {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 0 var(--padding);
 }
 
-form .upload-area-file .file-set {
+:is(form, .form) .upload-area-file .file-set {
     display: flex;
     align-items: center;
     gap: var(--padding);
     margin-top: 0;
 }
-form .upload-area-file.multiple .file-set {
+:is(form, .form) .upload-area-file.multiple .file-set {
     width: 100%;
     border-top: solid var(--outline) var(--color-outline);
     margin-top: calc(var(--padding) / 2);
     padding-top: calc(var(--padding) / 2);
 }
-form .file-name {
+:is(form, .form) .file-name {
     flex: 1;
     line-height:1.2;
 }
-form .file-icon {
+:is(form, .form) .file-icon {
     padding: calc(var(--padding) / 2) var(--padding);
     color: var(--color-white);
 	font-size: calc(var(--font-size) * 0.8);
@@ -303,17 +279,17 @@ form .file-icon {
     justify-content: center;
     overflow: hidden;
 }
-form .file-icon.image {
+:is(form, .form) .file-icon.image {
     padding: 0;
 }
-form .file-icon img {
+:is(form, .form) .file-icon img {
     object-fit: cover;
     width: 6em;
     height:3em;
     border-radius: calc(var(--radius-inner) / 2);
 }
 
-form .upload-area.shake {
+:is(form, .form) .upload-area.shake {
     animation: shake .1s infinite;
 }
 @keyframes shake {
@@ -323,7 +299,7 @@ form .upload-area.shake {
     100% {transform: translate(0px, 0px)}
 }
 
-form .upload-area .delete-file {
+:is(form, .form) .upload-area .delete-file {
     border: none;
     background: none;
     color:var(--color-gray);
@@ -332,20 +308,20 @@ form .upload-area .delete-file {
     align-items: center;
     outline: none;
 }
-form .upload-area .delete-file:hover {
+:is(form, .form) .upload-area .delete-file:hover {
     color:var(--color-red);
 }
 
 
 /* Range */
-form .range {
+:is(form, .form) .range {
     display: inline-flex;
     align-items: center;
     gap: var(--padding);
     width: var(--input-width);
     max-width: 100%;
 }
-form input[type=range] {
+:is(form, .form) input[type=range] {
     background: var(--color-outline);
     height: calc(var(--trigger-bar) * 2);
     flex: 1;
@@ -354,40 +330,40 @@ form input[type=range] {
     appearance: none;
     cursor: grab;
 }
-form input[type=range]:hover {
+:is(form, .form) input[type=range]:hover {
     background: var(--color-outline-focus);
 }
-form input[type=range]::-webkit-slider-thumb ,
-form input[type=range]::-moz-range-thumb {
+:is(form, .form) input[type=range]::-webkit-slider-thumb ,
+:is(form, .form) input[type=range]::-moz-range-thumb {
     border: none;
     background: var(--color-trigger-bg);
 }
 
 
 /* Select */
-form select {
+:is(form, .form) select {
     min-width: var(--input-width);
 }
 
 
 /* Number */
-form .number {
+:is(form, .form) .number {
     display: inline-flex;
     align-items: center;
     gap: calc(var(--gap) / 2);
     width: var(--input-width);
     max-width: 100%;
 }
-form input[type=number] {
+:is(form, .form) input[type=number] {
     width: var(--input-width);
     max-width: 100%;
     text-align: center;
 }
-form .number input[type=number] {
+:is(form, .form) .number input[type=number] {
     width: calc(100% - 48px - var(--gap));
     flex: 1;
 }
-form .number button {
+:is(form, .form) .number button {
     color: var(--color-text);
     font-size: var(--font-size);
     transition: var(--transition);
@@ -399,27 +375,27 @@ form .number button {
     height:24px;
     padding: 0;
 }
-form .number button:hover {
+:is(form, .form) .number button:hover {
     color: var(--color-hover);
 }
-form .number input[type=number]::-webkit-outer-spin-button ,
-form .number input[type=number]::-webkit-inner-spin-button ,
-form .number input[type=number] {
+:is(form, .form) .number input[type=number]::-webkit-outer-spin-button ,
+:is(form, .form) .number input[type=number]::-webkit-inner-spin-button ,
+:is(form, .form) .number input[type=number] {
     appearance: none;
     -moz-appearance:textfield;
 }
 
 
 /* Password */
-form .password {
+:is(form, .form) .password {
     width: var(--input-width);
     max-width: 100%;
 }
-form .password input {
+:is(form, .form) .password input {
     padding-right: 3em;
     width: 100%;
 }
-form .password button {
+:is(form, .form) .password button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -436,29 +412,29 @@ form .password button {
     transition: var(--transition);
     cursor: pointer;
 }
-form .password button:hover {
+:is(form, .form) .password button:hover {
     color: var(--color-hover);
 }
-form .password button span:last-child {
+:is(form, .form) .password button span:last-child {
     display: none;
 }
-form .password button.visible span:first-child {
+:is(form, .form) .password button.visible span:first-child {
     display: none;
 }
-form .password button.visible span:last-child {
+:is(form, .form) .password button.visible span:last-child {
     display: inline;
 }
 
 
 /* Search */
-form input[type=search] {
+:is(form, .form) input[type=search] {
     appearance: none;
 }
-form .search input {
+:is(form, .form) .search input {
     padding-right: 3em;
     width: 100%;
 }
-form .search button {
+:is(form, .form) .search button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -476,18 +452,18 @@ form .search button {
     cursor: pointer;
     border-radius: 0 var(--radius-inner) var(--radius-inner) 0;
 }
-form .search input[type=search]::-webkit-search-cancel-button {
+:is(form, .form) .search input[type=search]::-webkit-search-cancel-button {
     display: none;
 }
 
 
 /* Others */
-form ::placeholder {
+:is(form, .form) ::placeholder {
     color:var(--color-gray);
     opacity: 0.8;
 }
 
-form .require {
+:is(form, .form) .require {
 	font-size: 0.8em;
     line-height:0.8em;
 	color: #fff;
@@ -504,15 +480,15 @@ form .require {
 
 }
 @media (max-width : 720px) {
-    form .flex {
+    :is(form, .form) .flex {
         flex-direction: row;
     }
 }
 @media (max-width : 520px) {
-    form .file-icon {
+    :is(form, .form) .file-icon {
         display: hidden;
     }
-    form :is(input,select,textarea) + :is(input,select,textarea) {
+    :is(form, .form) :is(input,select,textarea) + :is(input,select,textarea) {
         margin-top: calc(var(--margin) / 2);
     }
 }
