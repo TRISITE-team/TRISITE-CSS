@@ -43,7 +43,6 @@
 	border: solid 1px var(--color-disagree-bg);
 	background: var(--color-disagree-bg);
 	color: var(--color-disagree-fr);
-	border: none;
 	min-width: auto;
 }
 
@@ -51,7 +50,6 @@
 	border: solid 1px var(--color-cancel-bg);
 	background: var(--color-cancel-bg);
 	color: var(--color-cancel-fr);
-	border: none;
 	min-width: auto;
 }
 

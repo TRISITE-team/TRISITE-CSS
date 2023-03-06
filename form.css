@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-:is(form, .form) input ,
+:is(form, .form) input:not(.button) ,
 :is(form, .form) select ,
 :is(form, .form) textarea {
     padding: calc(var(--padding) / 2);
@@ -38,7 +38,7 @@
     width: auto;
 }
 
-:is(form, .form) input:hover ,
+:is(form, .form) input:not(.button):hover ,
 :is(form, .form) textarea:hover ,
 :is(form, .form) input:focus ,
 :is(form, .form) textarea:focus {
