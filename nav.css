@@ -15,6 +15,12 @@ html.open.no-scroll body {
     height: 100%;
     z-index: 5;
 }
+.main-menu.slide-left {
+    transition: left var(--transition);
+}
+.main-menu.slide-right {
+    transition: right var(--transition);
+}
 
 .main-menu > * {
     display: flex;
@@ -122,8 +128,7 @@ html.open.no-scroll body {
 
 /* Media Query */
 @media (max-width : 920px) {
-    .main-menu ,
-    #details-content {
+    .main-menu {
         position: fixed;
         top: 0;
         width: 100%;
@@ -133,11 +138,9 @@ html.open.no-scroll body {
     }
     .main-menu.slide-left {
         left: -200vw;
-        transition: left var(--transition);
     }
     .main-menu.slide-right {
         right: -200vw;
-        transition: right var(--transition);
     }
     .menu-trigger[open]:not(.close) ~ .main-menu.slide-left ,
     .menu-trigger[open]:not(.close) > .main-menu.slide-left ,
@@ -164,8 +167,7 @@ html.open.no-scroll body {
 
 /* Container Query */
 @container (max-width : 920px) {
-    .main-menu ,
-    #details-content {
+    .main-menu {
         position: fixed;
         top: 0;
         width: 100%;
@@ -174,12 +176,10 @@ html.open.no-scroll body {
         background: var(--color-light-glass);
     }
     .main-menu.slide-left {
-        left: -100vw;
-        transition: left var(--transition);
+        left: -200vw;
     }
     .main-menu.slide-right {
-        right: -100vw;
-        transition: right var(--transition);
+        right: -200vw;
     }
     .menu-trigger[open]:not(.close) ~ .main-menu.slide-left ,
     .menu-trigger[open]:not(.close) > .main-menu.slide-left ,
