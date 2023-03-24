@@ -119,6 +119,23 @@ html.open.no-scroll body {
     z-index: 3;
 }
 
+@keyframes menu-left {
+    0% { left: -110vw; }
+    100% { left: 0; }
+}
+@keyframes menu-right {
+    0% { right: -110vw; }
+    100% { right: 0; }
+}
+@keyframes menu-left-close {
+    0% { left: 0; }
+    100% { left: -110vw; }
+}
+@keyframes menu-right-close {
+    0% { right: 0; }
+    100% { right: -110vw; }
+}
+
 
 /* Media Query */
 @media (max-width : 920px) {
@@ -130,24 +147,27 @@ html.open.no-scroll body {
         overflow-y:auto;
         background: var(--color-light-glass);
     }
+    .menu-trigger[open].close ~ .main-menu.slide-left ,
+    .menu-trigger[open].close > .main-menu.slide-left ,
     .main-menu.slide-left {
-        left: -200vw;
-        transition: left var(--transition);
+        animation: menu-left-close forwards var(--transition) 1 ease-in;
     }
+    .menu-trigger[open].close ~ .main-menu.slide-right ,
+    .menu-trigger[open].close > .main-menu.slide-right ,
     .main-menu.slide-right {
-        right: -200vw;
-        transition: right var(--transition);
+        animation: menu-right-close forwards var(--transition) 1 ease-in;
     }
     .menu-trigger[open]:not(.close) ~ .main-menu.slide-left ,
     .menu-trigger[open]:not(.close) > .main-menu.slide-left ,
     html.open .main-menu.slide-left {
-        left: 0;
+        animation: menu-left forwards var(--transition) 1 ease-out;
     }
     .menu-trigger[open]:not(.close) ~ .main-menu.slide-right ,
     .menu-trigger[open]:not(.close) > .main-menu.slide-right ,
     html.open .main-menu.slide-right {
-        right: 0;
+        animation: menu-right forwards var(--transition) 1 ease-out;
     }
+
     .main-menu ul {
         display: block;
     }
@@ -171,24 +191,27 @@ html.open.no-scroll body {
         overflow-y:auto;
         background: var(--color-light-glass);
     }
+    .menu-trigger[open].close ~ .main-menu.slide-left ,
+    .menu-trigger[open].close > .main-menu.slide-left ,
     .main-menu.slide-left {
-        left: -200vw;
-        transition: left var(--transition);
+        animation: menu-left-close forwards var(--transition) 1 ease-in;
     }
+    .menu-trigger[open].close ~ .main-menu.slide-right ,
+    .menu-trigger[open].close > .main-menu.slide-right ,
     .main-menu.slide-right {
-        right: -200vw;
-        transition: right var(--transition);
+        animation: menu-right-close forwards var(--transition) 1 ease-in;
     }
     .menu-trigger[open]:not(.close) ~ .main-menu.slide-left ,
     .menu-trigger[open]:not(.close) > .main-menu.slide-left ,
     html.open .main-menu.slide-left {
-        left: 0;
+        animation: menu-left forwards var(--transition) 1 ease-out;
     }
     .menu-trigger[open]:not(.close) ~ .main-menu.slide-right ,
     .menu-trigger[open]:not(.close) > .main-menu.slide-right ,
     html.open .main-menu.slide-right {
-        right: 0;
+        animation: menu-right forwards var(--transition) 1 ease-out;
     }
+
     .main-menu ul {
         display: block;
     }
