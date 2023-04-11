@@ -46,11 +46,11 @@
 .flex > .g4  { flex: 4; }
 .flex > .g5  { flex: 5; }
 
-.flex > .order1  { order: 1; }
-.flex > .order2  { order: 2; }
-.flex > .order3  { order: 3; }
-.flex > .order4  { order: 4; }
-.flex > .order5  { order: 5; }
+:is(.grid, .flex) > .order1  { order: 1; }
+:is(.grid, .flex) > .order2  { order: 2; }
+:is(.grid, .flex) > .order3  { order: 3; }
+:is(.grid, .flex) > .order4  { order: 4; }
+:is(.grid, .flex) > .order5  { order: 5; }
 
 :is(.grid, .flex).half-gap {
     gap: calc(var(--gap) / 2);
@@ -78,10 +78,10 @@
     .grid-column-2 { grid-template-columns: repeat(2, 1fr); }
 
     .flex:has(> .container) {
-        flex: none;
+        display: block;
     }
     .flex.clear-tb {
-        flex: none;
+        display: block;
     }
     .grid:has(> .container) {
         grid-template-columns: repeat(1, 1fr);
@@ -103,11 +103,11 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    .flex > .tb-order1 { order: 1; }
-    .flex > .tb-order2 { order: 2; }
-    .flex > .tb-order3 { order: 3; }
-    .flex > .tb-order4 { order: 4; }
-    .flex > .tb-order5 { order: 5; }
+    :is(.grid, .flex) > .tb-order1 { order: 1; }
+    :is(.grid, .flex) > .tb-order2 { order: 2; }
+    :is(.grid, .flex) > .tb-order3 { order: 3; }
+    :is(.grid, .flex) > .tb-order4 { order: 4; }
+    :is(.grid, .flex) > .tb-order5 { order: 5; }
 }
 @media (max-width : 520px) {
     .grid-column-5 { grid-template-columns: repeat(2, 1fr); }
@@ -115,14 +115,14 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    .flex > .sp-order1 { order: 1; }
-    .flex > .sp-order2 { order: 2; }
-    .flex > .sp-order3 { order: 3; }
-    .flex > .sp-order4 { order: 4; }
-    .flex > .sp-order5 { order: 5; }
+    :is(.grid, .flex) > .sp-order1 { order: 1; }
+    :is(.grid, .flex) > .sp-order2 { order: 2; }
+    :is(.grid, .flex) > .sp-order3 { order: 3; }
+    :is(.grid, .flex) > .sp-order4 { order: 4; }
+    :is(.grid, .flex) > .sp-order5 { order: 5; }
 
     .flex.clear-sp {
-        flex: none;
+        display: block;
     }
 
     .grid.clear-sp {
@@ -151,11 +151,11 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    .flex > .tb-order1 { order: 1; }
-    .flex > .tb-order2 { order: 2; }
-    .flex > .tb-order3 { order: 3; }
-    .flex > .tb-order4 { order: 4; }
-    .flex > .tb-order5 { order: 5; }
+    :is(.grid, .flex) > .tb-order1 { order: 1; }
+    :is(.grid, .flex) > .tb-order2 { order: 2; }
+    :is(.grid, .flex) > .tb-order3 { order: 3; }
+    :is(.grid, .flex) > .tb-order4 { order: 4; }
+    :is(.grid, .flex) > .tb-order5 { order: 5; }
 }
 @container (max-width : 520px) {
     .grid-column-5 { grid-template-columns: repeat(2, 1fr); }
@@ -163,11 +163,11 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    .flex > .sp-order1 { order: 1; }
-    .flex > .sp-order2 { order: 2; }
-    .flex > .sp-order3 { order: 3; }
-    .flex > .sp-order4 { order: 4; }
-    .flex > .sp-order5 { order: 5; }
+    :is(.grid, .flex) > .sp-order1 { order: 1; }
+    :is(.grid, .flex) > .sp-order2 { order: 2; }
+    :is(.grid, .flex) > .sp-order3 { order: 3; }
+    :is(.grid, .flex) > .sp-order4 { order: 4; }
+    :is(.grid, .flex) > .sp-order5 { order: 5; }
 
     .container:is(.flex, .grid) > .flex {
         flex: none;

@@ -77,3 +77,19 @@ table tr:last-of-type > :last-child {
 		border: none;
 	}
 }
+
+@container (max-width : 520px) {
+	table.block {
+		display: block;
+	}
+	table.block :is(tbody, tr, th, td),
+	table.block tr:nth-of-type(even) :is(th, td) {
+		display: block;
+		width: 100%;
+		background:none;
+	}
+	table.block tr td:last-of-type {
+		margin-bottom: var(--margin);
+		border: none;
+	}
+}
