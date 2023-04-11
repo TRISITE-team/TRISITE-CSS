@@ -78,10 +78,10 @@
     .grid-column-2 { grid-template-columns: repeat(2, 1fr); }
 
     .flex:has(> .container) {
-        display: block;
+        flex-direction: column;
     }
     .flex.clear-tb {
-        display: block;
+        flex-direction: column;
     }
     .grid:has(> .container) {
         grid-template-columns: repeat(1, 1fr);
@@ -122,7 +122,7 @@
     :is(.grid, .flex) > .sp-order5 { order: 5; }
 
     .flex.clear-sp {
-        display: block;
+        flex-direction: column;
     }
 
     .grid.clear-sp {
