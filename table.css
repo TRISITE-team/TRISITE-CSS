@@ -11,13 +11,13 @@ table {
 table.free {
 	table-layout: auto;
 }
-table :is(th, td) {
+table :where(th, td) {
 	padding: calc(var(--padding) / 2);
 	text-align: justify;
 	vertical-align: top;
 	background: var(--color-table);
 }
-table tbody tr:nth-last-child(odd) :is(th, td) {
+table tbody tr:nth-last-child(odd) :where(th, td) {
 	background: var(--color-table-odd);
 }
 table th {
@@ -66,8 +66,8 @@ table tr:last-of-type > :last-child {
 	table.block {
 		display: block;
 	}
-	table.block :is(tbody, tr, th, td),
-	table.block tr:nth-of-type(even) :is(th, td) {
+	table.block :where(tbody, tr, th, td),
+	table.block tr:nth-of-type(even) :where(th, td) {
 		display: block;
 		width: 100%;
 		background:none;
@@ -78,18 +78,3 @@ table tr:last-of-type > :last-child {
 	}
 }
 
-@container (max-width : 520px) {
-	table.block {
-		display: block;
-	}
-	table.block :is(tbody, tr, th, td),
-	table.block tr:nth-of-type(even) :is(th, td) {
-		display: block;
-		width: 100%;
-		background:none;
-	}
-	table.block tr td:last-of-type {
-		margin-bottom: var(--margin);
-		border: none;
-	}
-}

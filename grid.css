@@ -46,16 +46,16 @@
 .flex > .g4  { flex: 4; }
 .flex > .g5  { flex: 5; }
 
-:is(.grid, .flex) > .order1  { order: 1; }
-:is(.grid, .flex) > .order2  { order: 2; }
-:is(.grid, .flex) > .order3  { order: 3; }
-:is(.grid, .flex) > .order4  { order: 4; }
-:is(.grid, .flex) > .order5  { order: 5; }
+:where(.grid, .flex) > .order1  { order: 1; }
+:where(.grid, .flex) > .order2  { order: 2; }
+:where(.grid, .flex) > .order3  { order: 3; }
+:where(.grid, .flex) > .order4  { order: 4; }
+:where(.grid, .flex) > .order5  { order: 5; }
 
-:is(.grid, .flex).half-gap {
+:where(.grid, .flex).half-gap {
     gap: calc(var(--gap) / 2);
 }
-:is(.grid, .flex).no-gap {
+:where(.grid, .flex).no-gap {
     gap: 0;
 }
 
@@ -103,11 +103,11 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    :is(.grid, .flex) > .tb-order1 { order: 1; }
-    :is(.grid, .flex) > .tb-order2 { order: 2; }
-    :is(.grid, .flex) > .tb-order3 { order: 3; }
-    :is(.grid, .flex) > .tb-order4 { order: 4; }
-    :is(.grid, .flex) > .tb-order5 { order: 5; }
+    :where(.grid, .flex) > .tb-order1 { order: 1; }
+    :where(.grid, .flex) > .tb-order2 { order: 2; }
+    :where(.grid, .flex) > .tb-order3 { order: 3; }
+    :where(.grid, .flex) > .tb-order4 { order: 4; }
+    :where(.grid, .flex) > .tb-order5 { order: 5; }
 }
 @media (max-width : 520px) {
     .grid-column-5 { grid-template-columns: repeat(2, 1fr); }
@@ -115,11 +115,11 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    :is(.grid, .flex) > .sp-order1 { order: 1; }
-    :is(.grid, .flex) > .sp-order2 { order: 2; }
-    :is(.grid, .flex) > .sp-order3 { order: 3; }
-    :is(.grid, .flex) > .sp-order4 { order: 4; }
-    :is(.grid, .flex) > .sp-order5 { order: 5; }
+    :where(.grid, .flex) > .sp-order1 { order: 1; }
+    :where(.grid, .flex) > .sp-order2 { order: 2; }
+    :where(.grid, .flex) > .sp-order3 { order: 3; }
+    :where(.grid, .flex) > .sp-order4 { order: 4; }
+    :where(.grid, .flex) > .sp-order5 { order: 5; }
 
     .flex.clear-sp {
         flex-direction: column;
@@ -151,11 +151,11 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    :is(.grid, .flex) > .tb-order1 { order: 1; }
-    :is(.grid, .flex) > .tb-order2 { order: 2; }
-    :is(.grid, .flex) > .tb-order3 { order: 3; }
-    :is(.grid, .flex) > .tb-order4 { order: 4; }
-    :is(.grid, .flex) > .tb-order5 { order: 5; }
+    :where(.grid, .flex) > .tb-order1 { order: 1; }
+    :where(.grid, .flex) > .tb-order2 { order: 2; }
+    :where(.grid, .flex) > .tb-order3 { order: 3; }
+    :where(.grid, .flex) > .tb-order4 { order: 4; }
+    :where(.grid, .flex) > .tb-order5 { order: 5; }
 }
 @container (max-width : 520px) {
     .grid-column-5 { grid-template-columns: repeat(2, 1fr); }
@@ -163,17 +163,17 @@
     .grid-column-3 { grid-template-columns: repeat(1, 1fr); }
     .grid-column-2 { grid-template-columns: repeat(1, 1fr); }
 
-    :is(.grid, .flex) > .sp-order1 { order: 1; }
-    :is(.grid, .flex) > .sp-order2 { order: 2; }
-    :is(.grid, .flex) > .sp-order3 { order: 3; }
-    :is(.grid, .flex) > .sp-order4 { order: 4; }
-    :is(.grid, .flex) > .sp-order5 { order: 5; }
+    :where(.grid, .flex) > .sp-order1 { order: 1; }
+    :where(.grid, .flex) > .sp-order2 { order: 2; }
+    :where(.grid, .flex) > .sp-order3 { order: 3; }
+    :where(.grid, .flex) > .sp-order4 { order: 4; }
+    :where(.grid, .flex) > .sp-order5 { order: 5; }
 
-    .container:is(.flex, .grid) > .flex {
+    .container:where(.flex, .grid) > .flex {
         flex: none;
         gap: 0;
     }
-    .container:is(.flex, .grid) > .grid {
+    .container:where(.flex, .grid) > .grid {
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
     }
