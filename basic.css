@@ -56,11 +56,11 @@ section {
 main * + :not(section,p,ul,ol,table,figcaption,pre,span,li,tr,th,td,dd,label,input,select,textarea,button,.button) {
 	margin-top: var(--margin);
 }
-main * + :where(p,ul,ol,table,figcaption,pre) ,
-main :where(h1,h2,h3,h4,h5,h6) + * {
+main * + :is(p,ul,ol,table,figcaption,pre) ,
+main :is(h1,h2,h3,h4,h5,h6) + * {
 	margin-top: calc(var(--margin) / 2);
 }
-main :where(.grid,.flex,.pageing,picture) > * {
+main :is(.grid,.flex,.pageing,picture) > * {
 	margin-top: 0;
 }
 
@@ -116,7 +116,7 @@ img + figcaption {
 	margin-top: var(--padding);
 }
 
-:where(sub, sup) {
+:is(sub, sup) {
 	font-size: var(--small);
 }
 
@@ -141,20 +141,20 @@ p > .right {
 	padding: 0 0 var(--padding) var(--padding);
 }
 
-:where(ul, ol) {
+:is(ul, ol) {
 	margin-inline-start: 1.5em;
 }
 li {
 	line-height: var(--line-height);
 }
-:where(ul, ol).no-style li {
+:is(ul, ol).no-style li {
 	list-style: none;
 }
 
 dl dt {
 	font-weight: bold;
 }
-dl :where(dt, dd) + dd {
+dl :is(dt, dd) + dd {
 	margin-top: calc(var(--margin) / 2);
 }
 
