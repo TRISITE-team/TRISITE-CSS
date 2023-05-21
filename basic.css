@@ -147,6 +147,9 @@ p > .right {
 li {
 	line-height: var(--line-height);
 }
+:is(ul, ol).no-style {
+	margin-inline-start: 0;
+}
 :is(ul, ol).no-style li {
 	list-style: none;
 }
