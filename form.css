@@ -66,6 +66,8 @@
     display: inline-block;
     width: calc(1em * var(--step));
     height: calc(1em * var(--step));
+    min-width: 1.4em;
+    min-height: 1.4em;
     border-radius: 50%;
     border: solid var(--outline) var(--color-outline);
     background: var(--color-form);
