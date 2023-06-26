@@ -53,7 +53,7 @@ section {
 	padding:var(--section-space) 0;
 }
 
-main * + :not(section,p,ul,ol,table,figcaption,pre,span,li,tr,th,td,dd,label,input,select,textarea,button,.button) {
+main * + :not(br,section,p,ul,ol,table,figcaption,pre,span,li,tr,th,td,dd,label,input,select,textarea,button,.button) {
 	margin-top: var(--margin);
 }
 main * + :is(p,ul,ol,table,figcaption,pre) ,
@@ -188,8 +188,17 @@ address {
 .aspect-1-1 {
 	aspect-ratio: 1 / 1;
 }
+.aspect-2-1 {
+	aspect-ratio: 2 / 1;
+}
 .aspect-16-9 {
 	aspect-ratio: 16 / 9;
+}
+
+:where(.aspect-4-3, .aspect-1-1, .aspect-2-1, .aspect-16-9) > img {
+	object-fit: cover;
+	width: auto;
+	height: auto;
 }
 
 
