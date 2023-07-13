@@ -476,6 +476,10 @@
 	display: inline-block;
 }
 
+input[type="hidden"] {
+    display: none;
+}
+
 
 /** Media Query **/
 @media (max-width : 920px) {
@@ -488,7 +492,7 @@
 }
 @media (max-width : 520px) {
     :where(form, .form) .file-icon {
-        display: hidden;
+        display: none;
     }
     :where(form, .form) :where(input,select,textarea) + :where(input,select,textarea) {
         margin-top: calc(var(--margin) / 2);
