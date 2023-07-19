@@ -157,7 +157,7 @@
 }
 :where(form, .form) input:where([type=date], [type=time], [type=datetime-local])::-webkit-calendar-picker-indicator {
     color: var(--color-outline-text);
-    background-color: var(--color-outline);
+    border-left: solid 1px var(--color-outline);
     padding: calc(var(--padding) + 5px);
     padding-left: calc(var(--padding) / 2);
     margin: calc((var(--padding) + 5px) * -1);
@@ -169,7 +169,7 @@
 }
 :where(form, .form) input:where([type=date], [type=time], [type=datetime-local]):hover::-webkit-calendar-picker-indicator {
     color: var(--color-outline-focus-text);
-    background-color: var(--color-outline-focus);
+    border-left: solid 1px var(--color-outline-focus);
 }
 :where(form, .form) input:where([type=date], [type=time])::-webkit-calendar-picker-indicator:active {
     background-color: var(--color-outline-focus);
