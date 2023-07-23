@@ -39,7 +39,7 @@ body {
 	word-wrap: break-word;
 	letter-spacing: 1px;
 	line-height: var(--line-height);
-	position: flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
