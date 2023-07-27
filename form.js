@@ -208,7 +208,7 @@ $(function() {
             $(this).parent('label').addClass('radio');
         }
         if ( $(this).siblings('span').length == 0 ){
-            $(this).parent('label').append('<span>');
+            $(this).after('<span>');
         }
     });
 
