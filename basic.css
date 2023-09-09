@@ -201,8 +201,8 @@ address {
 
 :where(.aspect-4-3, .aspect-1-1, .aspect-2-1, .aspect-16-9) > img {
 	object-fit: cover;
-	width: auto;
-	height: auto;
+	width: 100%;
+	height: 100%;
 }
 
 

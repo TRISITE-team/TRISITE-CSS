@@ -466,8 +466,8 @@
 }
 
 :where(form, .form) .require {
-	font-size: 0.8em;
-    line-height:0.8em;
+	font-size: 0.7em;
+    line-height:1.1;
 	color: #fff;
 	padding: 0.2em 4px;
 	margin: 0 0 0 5px;
